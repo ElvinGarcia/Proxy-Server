@@ -3,9 +3,9 @@ const router = express.Router();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const options = {
-  target: 'https://api.github.com/repositories/95937718/contents/technical_blog/_posts', // target host
+  target: process.env.POST_ENDPOINT, // target host
   changeOrigin: true, // needed for virtual hosted sites
-  pathRewrite: { [`^/api/blog/posts`]: '', }
+  pathRewrite: { [`^/api/user/posts`]: '', }
 }
 
 router.get("/posts",createProxyMiddleware(options) )

@@ -1,6 +1,8 @@
 require('dotenv').config();
 const profile = require("./routes/github/profile");
 const posts = require("./routes/github/posts");
+
+
 const express = require('express');
 const app = express();
 const morgan = require("morgan");
@@ -24,8 +26,9 @@ app.use(morgan('dev'));
 //   }
 // });
 
-app.use("/api", profile);
-app.use("/api/blog", posts);
+app.use("/api/user", profile);
+app.use("/api/user", posts);
+
 
 
 
