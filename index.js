@@ -17,15 +17,6 @@ app.use(cors());
 app.use(morgan('dev'));
 
 
-
-// app.use('', (req, res, next) => {
-//   if (req.headers.authorization) {
-//       next();
-//   } else {
-//       res.sendStatus(403);
-//   }
-// });
-
 app.use("/api/user", profile);
 app.use("/api/user", posts);
 
