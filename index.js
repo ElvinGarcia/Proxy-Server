@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const morgan = require("morgan");
 const cors = require('cors');
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 const HOST = "localhost";
 
 // CORS
