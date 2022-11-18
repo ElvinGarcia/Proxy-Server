@@ -14,7 +14,8 @@ const options = {
 }
 
 
-router.post("/profile",createProxyMiddleware(options) )
+router.post("/profile", createProxyMiddleware(options))
+
 
 
 

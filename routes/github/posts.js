@@ -8,7 +8,9 @@ const options = {
   pathRewrite: { [`^/api/user/posts`]: '', }
 }
 
-router.get("/posts",createProxyMiddleware(options) )
+
+
+router.get("/posts",createProxyMiddleware(options))
 
 
 
