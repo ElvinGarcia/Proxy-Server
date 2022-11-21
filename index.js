@@ -32,6 +32,7 @@ app.use(cache('1 minutes'));
 
 // Rate Limits
 app.use(rateLimter(rateLimterOptions));
+app.set('trust proxy', 1)
 
 // CORS
 app.use(cors(corsOptions));
