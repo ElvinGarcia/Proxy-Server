@@ -27,8 +27,9 @@ const corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-// API caching
-app.use(cache('1 minutes'));
+// API caching commented out do to a bug when using CORS and apicache middleware where headers are blocked
+// https://github.com/kwhitley/apicache/issues/187
+// app.use(cache('1 minutes'));
 
 // Rate Limits
 app.use(rateLimter(rateLimterOptions));
