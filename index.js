@@ -2,6 +2,10 @@ require('dotenv').config();
 const profile = require("./routes/github/profile");
 const posts = require("./routes/github/posts");
 
+// compression
+const compression = require("compression");
+
+
 const express = require('express');
 const app = express();
 const morgan = require("morgan");
@@ -26,6 +30,10 @@ const corsOptions = {
   origin: process.env.CLIENT ,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
+
+// Compress all routes
+app.use(compression());
+
 
 // API caching commented out do to a bug when using CORS and apicache middleware where headers are blocked
 // https://github.com/kwhitley/apicache/issues/187
