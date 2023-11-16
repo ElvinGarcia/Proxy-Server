@@ -17,9 +17,4 @@ const options = {
 router.post("/profile", createProxyMiddleware(options))
 
 
-
-
-
-
-
 module.exports = router
