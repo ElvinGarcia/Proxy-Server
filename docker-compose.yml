@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "4000:4000" # Map container port 4000 to host
+    env_file:
+      - .env
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules # Avoid overwriting node_modules
+    depends_on:
+      - frontnd
+    restart: unless-stopped
